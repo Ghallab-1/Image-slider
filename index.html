@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Slider</title>
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/128/5166/5166150.png">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./index.js"></script>
+</head>
+<style>
+    body{
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    background-color: darkgray;
+}
+
+a{
+    color: white;
+}
+
+h1{
+    text-align: center;
+}
+
+.Container{
+    width: 500px;
+    margin: 50px auto;
+    overflow: auto;
+    width: 50%;
+}
+
+.Slider-inner{
+    width: 400px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    float: left;
+    padding: 5px;
+    border: 1px solid black;
+}
+
+.Slider-inner img{
+    display: none;
+    width: 400px;
+    height: 200px;
+}
+
+.Slider-inner img.active{
+    display: inline-block;
+}
+
+.prev,.next{
+    float: left;
+    margin-top: 40px;
+    cursor: pointer;
+}
+
+.prev{
+    position: relative;
+    margin-left:45px;
+    z-index: 100;
+}
+
+.next{
+    position: relative;
+    z-index: 100;
+}
+</style>
+<body>
+    <div class="Container">
+        <h1>Cars Slider</h1>
+        <div class="Slider-outter">
+            <img src="https://cdn-icons-png.flaticon.com/128/2722/2722991.png" class="prev" alt="Prev">
+            <div class="Slider-inner">
+                <img src="https://i.pinimg.com/236x/8e/1a/ce/8e1ace8ff226734145870063b9281e06.jpg" class="active">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDRX7dZdC2oTLL5dW0XauKgWH-W0QVx43NLg&s">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp_RWXYJe5iuAbttwAD5pohH3fpKslzJOsvg&s">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNXxRjG2EC51G0JGGXThyu34YD5ehHyc3tSA&s">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUkzygCkgzzlSYqfsXYm6y1GypWqSDPrOu2g&s">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD-EAef38pNJ7xswcP76m805VaJw7yOqcjwQ&s">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStdtRWCkU5wNKid34nXLKX3qgEZ2_jryPjSg&s">
+            </div>
+            <img src="https://cdn-icons-png.flaticon.com/128/2722/2722985.png" class="next" alt="Next">
+        </div>
+    </div>
+<script>
+$(document).ready(function() {
+    $('.next').on('click', function(){
+        var currentImg = $('.active');
+        var nextImg = currentImg.next();
+        
+        if(nextImg.length){
+            currentImg.removeClass('active').css('z-index', -10);
+            nextImg.addClass('active').css('z-index', 10);
+        }
+    });
+
+    $('.prev').on('click', function(){
+        var currentImg = $('.active');
+        var prevImg = currentImg.prev();
+
+        if(prevImg.length){
+            currentImg.removeClass('active').css('z-index', -10);
+            prevImg.addClass('active').css('z-index', 10);
+        }
+    });
+});
+
+</script>
+
+</body>
+</html>

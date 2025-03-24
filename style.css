@@ -1,0 +1,57 @@
+body{
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    background-color: darkgray;
+}
+
+a{
+    color: white;
+}
+
+h1{
+    text-align: center;
+}
+
+.Container{
+    width: 500px;
+    margin: 50px auto;
+    overflow: auto;
+    width: 50%;
+}
+
+.Slider-inner{
+    width: 400px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    float: left;
+    padding: 5px;
+    border: 1px solid black;
+}
+
+.Slider-inner img{
+    display: none;
+    width: 400px;
+    height: 200px;
+}
+
+.Slider-inner img.active{
+    display: inline-block;
+}
+
+.prev,.next{
+    float: left;
+    margin-top: 40px;
+    cursor: pointer;
+}
+
+.prev{
+    position: relative;
+    margin-left:45px;
+    z-index: 100;
+}
+
+.next{
+    position: relative;
+    z-index: 100;
+}
